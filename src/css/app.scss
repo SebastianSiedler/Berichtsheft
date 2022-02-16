@@ -1,0 +1,39 @@
+// app global css in SCSS form
+
+/**
+ * Add own colors with CSS custom properties
+ * (name, light, dark?)
+ */
+$customColors: (
+  // Custom Color 1
+  (abc, pink, green),
+  // Custom Color 2
+  (def, orange),
+  // Primary nur weniger opacity bzw. schwächer
+  (primaryweak, rgba(#1574f6, 0.5))
+);
+
+@each $name, $lightCol, $darkCol in $customColors {
+  // Set light mode variable
+  .body--light {
+    --#{$name}: #{$lightCol};
+  }
+  // Set dark mode variable if available -> else light mode variable
+  .body--dark {
+    @if $darkCol {
+      --#{$name}: #{$darkCol};
+    } @else {
+      --#{$name}: #{$lightCol};
+    }
+  }
+
+  // Set custom property variable for text
+  .text-#{$name} {
+    color: var(--#{$name});
+  }
+
+  // Set custom property variable for element backgrounds
+  .bg-#{$name} {
+    background: var(--#{$name});
+  }
+}

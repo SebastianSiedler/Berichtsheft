@@ -1,0 +1,15 @@
+# Order of redirects matters
+
+[[redirects]]
+  from = "/home"
+  to = "/home/index.html"
+  #force = true
+  status = 200
+
+# SPA history mode routing. Keep this last:
+[[redirects]]
+  from = "/*"
+  # app.html is not prerendered, unlike index.html (Home page component)
+  # so we can avoid white flash on routes other than home that were not prerendered
+  to = "/app.html"
+  status = 200
