@@ -176,7 +176,6 @@ export const ReportChageStatusAPI = async (
 /**
  * Supervisor
  */
-
 export const getDesktopTraineeTable = async (asManager = false) => {
   const { data }: AxiosResponse<SupervisorDesktopTableAPI[]> = await $api.post(
     '/api/reports/supervisor_desktop_trainee_table/',

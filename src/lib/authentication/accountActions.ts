@@ -1,5 +1,4 @@
 import { _axios as $api } from 'boot/axios';
-//import { AxiosResponse } from 'axios';
 
 /**
  * Wenn der Admin erstmalig einen Tenant für das Unternehmen anlegt

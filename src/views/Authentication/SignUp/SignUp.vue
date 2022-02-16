@@ -36,14 +36,14 @@ const items = [
     title: 'Business',
     subtitle: 'Für den Einsatz im Unternehmen',
     link: 'enterprise',
-    icon: 'far fa-building',
+    icon: 'business',
     active: true,
   },
   {
     title: 'Privat',
     subtitle: 'Für den privaten Gebrauch - coming soon',
     link: 'private',
-    icon: 'far fa-user',
+    icon: 'person',
     active: false,
   },
 ];

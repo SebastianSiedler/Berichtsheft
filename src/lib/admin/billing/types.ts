@@ -14,7 +14,7 @@ export interface CompanyDataApi {
 export interface CreditCardAPI {
   id: number;
   default: boolean;
-  last4: 'string'; // '4242'
+  last4: string; // '4242'
   exp_month: number; // 1-12
   exp_year: number; // 2020
   brand: string; // visa

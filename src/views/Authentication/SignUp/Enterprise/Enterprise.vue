@@ -98,6 +98,7 @@
 // NPM
 import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { load } from 'recaptcha-v3';
 
 // LIB
 import { singleRules, rules } from 'lib/utils';
@@ -118,13 +119,13 @@ const hide = reactive({
 
 // TODO: das noch leeren, da für testzwecke, da ich nicht jedes mal neu daten eintragen will
 const obj = reactive<SignUpEnterprise>({
-  mail: 'a@a.de',
+  mail: '',
   salutation: 1,
-  firstName: 'asdf',
-  lastName: 'asdf',
-  password: 'asdf123!',
-  passwordRepeat: 'asdf123!',
-  companyName: 'CooleFirma GmbH',
+  firstName: '',
+  lastName: '',
+  password: '',
+  passwordRepeat: '',
+  companyName: '',
   terms: false,
   recaptchaToken: '',
 });
@@ -149,8 +150,6 @@ const onSubmit = async () => {
 };
 
 // rechapta-v3
-import { load } from 'recaptcha-v3';
-
 async function recaptcha() {
   const siteKey = '6LfDF4QcAAAAADU9T9TXLly2AFpMgTDV1I8fIJar'; // https://www.google.com/recaptcha/admin/site/478418883
   const recaptcha = await load(siteKey, {
